@@ -1,0 +1,124 @@
+/* animation for selected cards */
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+body {
+    background-color: rgba(0, 0, 255, 0.5);
+    font-family: Arial, serif;
+}
+
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats-container {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    padding: 2em;
+    margin: 1em;
+}
+
+.stats-container p {
+    font-size: 2em;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 120px;
+    height: 160px;
+    background-color: darkblue;
+    box-shadow: 3px 0 20px 5px rgba(0, 0, 0, .2);
+
+    transform-style: preserve-3d; /* Needed for 3D transforms */
+    transition: transform 0.5s; /* Add a transition for smooth animation */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+
+.card p {
+    display: none;
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+}
+
+.card:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.card.flipped {
+    animation: flip 0.5s forwards; /* Apply the flip animation */
+    transform: rotateY(180deg); /* Apply a 180-degree rotation to show the back of the card */
+}
+
+.card.flipped p {
+    display: block;
+    transform: rotateY(180deg); /* Apply the same rotation to the content of the card */
+}
+
+.game-over-message-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2em;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+}
+
+.game-over-message-container {
+    font-size: 2em;
+}
+
+.nbr-tries-text, .time-spent-text {
+    font-weight: bold;
+    color: greenyellow;
+}
+
+.play-again-button {
+    margin: 1em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.play-again-button:hover {
+    background-color: lightgreen;
+    color: black;
+}

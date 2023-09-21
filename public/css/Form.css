@@ -1,0 +1,44 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2em;
+}
+
+.form-container h2 {
+    font-size: 2em;
+}
+
+.form-container .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label, input, button {
+    padding: 1em
+}
+
+.form-container .validation-error {
+    color: red;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.form-container label {
+    font-size: 1em;
+}
+
+.form-container button {
+    background-color: darkblue;
+    color: white;
+    margin: 1em;
+}
+
+.form-container button:hover {
+    cursor: pointer;
+    background-color: lightgreen;
+    color: black;
+}
